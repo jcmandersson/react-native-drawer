@@ -144,13 +144,13 @@ export default class Drawer extends Component {
     // add function options
     this._prevLeft = this._left
 
-    let styles = {
-      container: {
+    let styles = {}
+
+    styles.container: Object.assign({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-      },
-    }
+    }, this.props.styles.container);
 
     styles.main = Object.assign({
       position: 'absolute',
@@ -244,7 +244,7 @@ export default class Drawer extends Component {
     this._panning = false
     this.shouldOpenDrawer(gestureState.dx) ? this.open() : this.close()
   };
-    
+
   onStartShouldSetPanResponderCapture = (e, gestureState) => {
     if (this.shouldCaptureGestures()) return this.processShouldSet(e, gestureState)
     return false
@@ -398,7 +398,7 @@ export default class Drawer extends Component {
         if(typeof type === 'function') {
           type() // this is actually a callback
         } else cb && cb()
-        
+
       }
     })
   };
