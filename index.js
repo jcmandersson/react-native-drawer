@@ -146,7 +146,7 @@ export default class Drawer extends Component {
 
     let styles = {}
 
-    styles.container: Object.assign({
+    styles.container = Object.assign({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
